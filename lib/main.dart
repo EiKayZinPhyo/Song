@@ -87,6 +87,22 @@ class _MyHomePageState extends State<MyHomePage> {
       'url':
           "https://drive.google.com/uc?export=view&id=1JkJggiaX_vQaFKHdWQ8TX0tuQ7UpL23-",
     },
+    {
+      "title": "Unstoppable",
+      "image":
+          "https://i.scdn.co/image/ab67616d0000b273754b2fddebe7039fdb912837",
+      "singername": "Sia",
+      'url':
+          "https://drive.google.com/uc?export=view&id=1q42mydCbMAIYc0rYcOx1FYt6_ICSBPUl",
+    },
+    {
+      'title': "Heat Waves",
+      'image':
+          "https://upload.wikimedia.org/wikipedia/en/b/b0/Glass_Animals_-_Heat_Waves.png",
+      'singername': "Glass Animals",
+      'url':
+          "https://drive.google.com/uc?export=view&id=15B8vLhKXbUljr060Y5vo8V9XjJ37NTpG",
+    },
   ];
 
   String currentimage = '';
