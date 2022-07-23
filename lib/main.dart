@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:song/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: 'loginpage',
+        routes: {
+          'loginpage': (context) => LoginPage(),
+          'musicpage': (context) => MyHomePage(),
+        });
   }
 }
 
@@ -49,22 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
     },
     {
       'image':
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwZEE5qJwVNh23EORRX6LfRSnJb3FlsCKMXM4qghMEosItParR2f9Quv3UP2aE3aEgC1w&usqp=CAU',
-      'title': 'Min A chit Kyaunt',
-      'singername': 'myanmar song',
-      'url':
-          'https://msicoursematerial.s3.us-west-2.amazonaws.com/min_a_chit_kyaunt.mp3',
-    },
-    {
-      'image':
-          'https://i.scdn.co/image/ab67616d0000b27375f6dc244c7d3a0f9ef9e056',
-      'title': 'A Way',
-      'singername': 'Hugh Grant Haley Bennett',
-      'url':
-          'https://msicoursematerial.s3.us-west-2.amazonaws.com/Hugh_Grant_Haley_Bennett_-_A_Way_(getmp3.pro).mp3',
-    },
-    {
-      'image':
           'https://images.genius.com/7063b4e5a2ea364a0c87dba2243eac6b.1000x1000x1.jpg',
       'title': 'Please Please',
       'singername': 'The Smith',
@@ -86,14 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
       "singername": "One Direction",
       'url':
           "https://drive.google.com/uc?export=view&id=1JkJggiaX_vQaFKHdWQ8TX0tuQ7UpL23-",
-    },
-    {
-      "title": "Unstoppable",
-      "image":
-          "https://i.scdn.co/image/ab67616d0000b273754b2fddebe7039fdb912837",
-      "singername": "Sia",
-      'url':
-          "https://drive.google.com/uc?export=view&id=1q42mydCbMAIYc0rYcOx1FYt6_ICSBPUl",
     },
     {
       'title': "Heat Waves",
@@ -137,9 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFEBEB),
+      backgroundColor: const Color(0xFfFB9F63),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFFFEBEB),
+        backgroundColor: const Color(0xFfFB9F63),
         title: const Text(
           "My Playlist",
           style: TextStyle(color: Colors.black),
