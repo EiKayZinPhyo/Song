@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:song/login.dart';
+import 'package:song/register.dart';
+import 'package:song/screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: 'loginpage',
+        initialRoute: 'screenpage',
         routes: {
+          'screenpage': (context) => ScreenPage(),
           'loginpage': (context) => LoginPage(),
           'musicpage': (context) => MyHomePage(),
+          'registerpage': (context) => RegisterPage()
         });
   }
 }
@@ -113,9 +118,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFfFB9F63),
+      backgroundColor: const Color(0xFFffb8b8),
       appBar: AppBar(
-        backgroundColor: const Color(0xFfFB9F63),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.remove('username');
+              Navigator.pushNamed(context, 'screenpage');
+            },
+          ),
+        ],
+        backgroundColor: const Color(0xFFffb8b8),
         title: const Text(
           "My Playlist",
           style: TextStyle(color: Colors.black),
